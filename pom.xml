@@ -12,6 +12,45 @@
         <activation>
           <activeByDefault>true</activeByDefault>
         </activation>
+        <repositories>
+          <repository>
+	          <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+          </repository>
+        </repositories>
+        <dependencies>
+            <dependency>
+                <groupId>com.github.SemanticWebBuilder</groupId>
+                <artifactId>SWBXMLRPCCommon</artifactId>
+                <version>master-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.SemanticWebBuilder</groupId>
+                <artifactId>SWBBase</artifactId>
+                <version>master-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-web-api</artifactId>
+                <version>7.0</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <maven.compiler.source>1.8</maven.compiler.source>
+            <maven.compiler.target>1.8</maven.compiler.target>
+        </properties>
+      </profile>
+
+      <profile>
+        <id>Local</id>
+        <activation>
+          <property>
+            <name>local</name>
+            <value>true</value>
+          </property>
+        </activation>
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
@@ -60,6 +99,44 @@
                 <groupId>com.github.SemanticWebBuilder</groupId>
                 <artifactId>SWBBase</artifactId>
                 <version>${branchtag}-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-web-api</artifactId>
+                <version>7.0</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <maven.compiler.source>1.8</maven.compiler.source>
+            <maven.compiler.target>1.8</maven.compiler.target>
+        </properties>
+      </profile>
+
+      <profile>
+        <id>Release</id>
+        <activation>
+          <property>
+            <name>releasetag</name>
+          </property>
+        </activation>
+        <repositories>
+          <repository>
+	          <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+          </repository>
+        </repositories>
+        <dependencies>
+            <dependency>
+                <groupId>com.github.SemanticWebBuilder</groupId>
+                <artifactId>SWBXMLRPCCommon</artifactId>
+                <version>${releasetag}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.SemanticWebBuilder</groupId>
+                <artifactId>SWBBase</artifactId>
+                <version>${releasetag}</version>
             </dependency>
             <dependency>
                 <groupId>javax</groupId>
