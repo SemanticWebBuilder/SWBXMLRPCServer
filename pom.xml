@@ -36,10 +36,10 @@
         </repositories>
         <dependencies>
             <dependency>
-                <groupId>com.github.SemanticWebBuilder</groupId>
-                <artifactId>SWBXMLRPCCommon</artifactId>
-                <version>master-SNAPSHOT</version>
-            </dependency>
+                <groupId>org.semanticwb</groupId>
+		<artifactId>SWBXMLRPCCommon</artifactId>
+		<version>5.0</version>
+	    </dependency>
             <dependency>
                 <groupId>com.github.SemanticWebBuilder</groupId>
                 <artifactId>SWBBase</artifactId>
